@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uma pergunta rápida</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main class="pagina-jogo">
+
+    <!-- ALTERE A PERGUNTA AQUI -->
+    <h1 class="pergunta">você gosta de mim?</h1>
+
+    <!-- Área onde o botão "Não" pode se mover livremente -->
+    <div class="area-botoes" id="areaBotoes">
+
+      <!-- Botão SIM: precisa ser clicado várias vezes -->
+      <button type="button" class="botao-sim" id="botaoSim">
+        <!-- ALTERE O TEXTO DO BOTÃO SIM AQUI -->
+        sim
+      </button>
+
+      <!-- Botão NÃO: foge do cursor do mouse -->
+      <button type="button" class="botao-nao" id="botaoNao">
+        <!-- ALTERE O TEXTO DO BOTÃO NÃO AQUI -->
+        não
+      </button>
+    </div>
+
+    <!-- Contador de cliques do botão SIM -->
+    <p class="contador" id="contador">0/100</p>
+
+  </main>
+
+  <!-- Script externo (não misturar JS aqui) -->
+  <script src="js/script.js"></script>
+</body>
+</html>
