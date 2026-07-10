@@ -1,19 +1,47 @@
-
+/* =========================================================
+   FOLHA DE ESTILOS PRINCIPAL
+   Todas as cores, fontes e tamanhos "editáveis" estão
+   centralizados aqui em cima, nas variáveis (:root).
+   Para mudar o visual do site inteiro, normalmente basta
+   alterar os valores desta seção.
+   ========================================================= */
 
 :root {
-  --cor-fundo: #bfe2fa;
-  --cor-fundo-escura: #12163b;
-  --cor-texto: #12163b;
-  --cor-destaque: #3e75c9;
-  --cor-destaque-2: #003b72;
+  /* ALTERE A COR DE FUNDO PRINCIPAL AQUI */
+  --cor-fundo: #FBF0F2;
+
+  /* ALTERE A COR DE FUNDO ESCURA (usada em detalhes e no rodapé) AQUI */
+  --cor-fundo-escura: #3B1220;
+
+  /* ALTERE A COR DO TEXTO PRINCIPAL AQUI */
+  --cor-texto: #3B1220;
+
+  /* ALTERE A COR DE DESTAQUE (rosa envelhecido) AQUI */
+  --cor-destaque: #C97B84;
+
+  /* ALTERE A COR DE DESTAQUE SECUNDÁRIA (dourado) AQUI */
+  --cor-destaque-2: #C9A15A;
+
+  /* ALTERE A COR BRANCA/CLARA USADA EM CARTÕES AQUI */
   --cor-clara: #FFFFFF;
+
+  /* ALTERE A FONTE DE TÍTULOS AQUI */
   --fonte-titulo: 'Cormorant Garamond', serif;
+
+  /* ALTERE A FONTE DE TEXTO NORMAL AQUI */
   --fonte-texto: 'Nunito Sans', sans-serif;
+
+  /* ALTERE A VELOCIDADE PADRÃO DAS ANIMAÇÕES AQUI (em segundos) */
   --velocidade-animacao: 0.4s;
+
+  /* ALTERE O ARREDONDAMENTO PADRÃO DAS BORDAS AQUI */
   --raio-borda: 18px;
-  --sombra-padrao: 0 18px 40px #12163b;(59, 18, 32, 0.15);
+
+  /* ALTERE A SOMBRA PADRÃO DOS ELEMENTOS AQUI */
+  --sombra-padrao: 0 18px 40px rgba(59, 18, 32, 0.15);
 }
 
+/* Reduz animações para quem prefere menos movimento no sistema */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -29,6 +57,7 @@
 }
 
 body {
+  /* ALTERE A FONTE PADRÃO DO SITE AQUI */
   font-family: var(--fonte-texto);
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
@@ -36,17 +65,22 @@ body {
   overflow-x: hidden;
 }
 
+/* Foco visível no teclado, para acessibilidade */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--cor-destaque-2);
   outline-offset: 3px;
 }
 
+/* =========================================================
+   PÁGINA INICIAL
+   ========================================================= */
 
 .pagina-inicial {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* ALTERE O ESPAÇAMENTO ENTRE AS SEÇÕES DA PÁGINA AQUI */
   gap: 64px;
   padding: 64px 24px 96px;
   max-width: 720px;
@@ -61,12 +95,16 @@ button:focus-visible {
   gap: 24px;
 }
 
+/* Moldura tipo "polaroid" para a foto do casal */
 .polaroid {
   background: var(--cor-clara);
+  /* ALTERE O ESPAÇAMENTO INTERNO DA MOLDURA AQUI */
   padding: 16px 16px 48px;
   box-shadow: var(--sombra-padrao);
+  /* ALTERE A ROTAÇÃO DA FOTO AQUI (efeito de foto "colada") */
   transform: rotate(-3deg);
   transition: transform var(--velocidade-animacao) ease;
+  /* ALTERE O TAMANHO MÁXIMO DA FOTO AQUI */
   max-width: 320px;
   width: 100%;
 }
@@ -77,12 +115,15 @@ button:focus-visible {
 
 .foto-casal {
   width: 100%;
+  /* ALTERE A ALTURA DA FOTO AQUI */
   height: 320px;
   object-fit: cover;
   display: block;
+  /* Cor de fundo enquanto a imagem real não é adicionada */
   background-color: #EAD7DA;
 }
 
+/* ALTERE O ESTILO DO TEXTO PERSONALIZADO AQUI */
 .texto-personalizado {
   font-style: italic;
   font-size: 1.05rem;
@@ -90,18 +131,22 @@ button:focus-visible {
   max-width: 480px;
 }
 
+/* ALTERE O ESTILO DO TÍTULO PRINCIPAL AQUI */
 .titulo-principal {
   font-family: var(--fonte-titulo);
   font-weight: 600;
+  /* ALTERE O TAMANHO DO TÍTULO AQUI */
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   line-height: 1.25;
   max-width: 480px;
 }
 
+/* --- Quadro de datas importantes --- */
 .datas-importantes {
   width: 100%;
   background: var(--cor-clara);
   border-radius: var(--raio-borda);
+  /* ALTERE O ESPAÇAMENTO INTERNO DO QUADRO DE DATAS AQUI */
   padding: 40px 32px;
   box-shadow: var(--sombra-padrao);
   text-align: center;
@@ -116,6 +161,7 @@ button:focus-visible {
   margin-bottom: 8px;
 }
 
+/* Linha decorativa em formato de "fio", elemento assinatura do design */
 .fio-decorativo {
   width: 100%;
   height: 32px;
@@ -124,6 +170,7 @@ button:focus-visible {
 
 .fio-decorativo path {
   fill: none;
+  /* ALTERE A COR DO FIO DECORATIVO AQUI */
   stroke: var(--cor-destaque-2);
   stroke-width: 2;
   stroke-linecap: round;
@@ -133,7 +180,7 @@ button:focus-visible {
   list-style: none;
   display: flex;
   flex-direction: column;
-
+  /* ALTERE O ESPAÇAMENTO ENTRE AS DATAS AQUI */
   gap: 20px;
 }
 
@@ -141,7 +188,8 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  border-bottom: 1px dashed #b8c8ff;
+  /* ALTERE A LINHA DIVISÓRIA ENTRE DATAS AQUI */
+  border-bottom: 1px dashed #E7CDD2;
   padding-bottom: 16px;
 }
 
@@ -159,9 +207,10 @@ button:focus-visible {
 
 .data-descricao {
   font-size: 0.95rem;
-  color: #619cbe;
+  color: #7A4A55;
 }
 
+/* --- Botão em formato de "selo de cera" para ir à próxima página --- */
 .secao-botao {
   display: flex;
   justify-content: center;
@@ -172,7 +221,7 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-
+  /* ALTERE O TAMANHO DO BOTÃO AQUI */
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -186,10 +235,14 @@ button:focus-visible {
 }
 
 .botao-selo:hover {
+  /* ALTERE O EFEITO DE HOVER DO BOTÃO AQUI */
   transform: scale(1.06) rotate(-2deg);
   background: var(--cor-destaque-2);
 }
 
+/* =========================================================
+   PÁGINA DO JOGO
+   ========================================================= */
 
 .pagina-jogo {
   min-height: 100vh;
@@ -205,6 +258,7 @@ button:focus-visible {
 .pergunta {
   font-family: var(--fonte-titulo);
   font-weight: 600;
+  /* ALTERE O TAMANHO DA PERGUNTA AQUI */
   font-size: clamp(2rem, 6vw, 3rem);
   max-width: 600px;
 }
@@ -214,18 +268,23 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* ALTERE O ESPAÇAMENTO ENTRE OS BOTÕES SIM/NÃO AQUI */
   gap: 32px;
+  /* ALTERE O TAMANHO DA ÁREA ONDE O BOTÃO "NÃO" PODE FUGIR AQUI */
   width: min(90vw, 700px);
   height: 220px;
 }
 
+/* Estilo base compartilhado pelos dois botões */
 .botao-sim,
 .botao-nao {
   border: none;
   cursor: pointer;
   font-family: var(--fonte-texto);
   font-weight: 700;
+  /* ALTERE O TAMANHO DO TEXTO DOS BOTÕES AQUI */
   font-size: 1.1rem;
+  /* ALTERE O ESPAÇAMENTO INTERNO DOS BOTÕES AQUI */
   padding: 18px 40px;
   border-radius: 999px;
   box-shadow: var(--sombra-padrao);
@@ -233,6 +292,7 @@ button:focus-visible {
 }
 
 .botao-sim {
+  /* ALTERE A COR DO BOTÃO "SIM" AQUI */
   background: var(--cor-destaque);
   color: var(--cor-clara);
 }
@@ -247,10 +307,13 @@ button:focus-visible {
 }
 
 .botao-nao {
+  /* ALTERE A COR DO BOTÃO "NÃO" AQUI */
   background: var(--cor-clara);
   color: var(--cor-fundo-escura);
   border: 2px solid var(--cor-destaque);
+  /* Necessário para o botão poder "fugir" pela tela */
   position: absolute;
+  /* A posição inicial é definida também via JavaScript */
   left: 60%;
 }
 
@@ -260,7 +323,9 @@ button:focus-visible {
   color: var(--cor-fundo-escura);
 }
 
-
+/* =========================================================
+   PÁGINA FINAL
+   ========================================================= */
 
 .pagina-final {
   min-height: 100vh;
@@ -273,9 +338,13 @@ button:focus-visible {
   overflow: hidden;
 }
 
-
-.coracao {
+/* Pequenos corações desenhados apenas com CSS (sem emojis/ícones),
+   flutuando ao fundo da página final */
+.pagina-final::before,
+.pagina-final::after {
+  content: "";
   position: absolute;
+  /* ALTERE O TAMANHO DOS CORAÇÕES DECORATIVOS AQUI */
   width: 26px;
   height: 26px;
   background: var(--cor-destaque);
@@ -284,37 +353,20 @@ button:focus-visible {
   animation: flutuar 6s ease-in-out infinite;
 }
 
-.coracao::before,
-.coracao::after {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  background: var(--cor-destaque);
-  border-radius: 50%;
-}
-
-
-.coracao::before {
-  top: -13px;
-  left: 0;
-}
-
-
-.coracao::after {
-  top: 0;
-  left: 13px;
-}
-
-.coracao-1 {
+.pagina-final::before {
   top: 15%;
   left: 12%;
 }
 
-.coracao-2 {
+.pagina-final::after {
   bottom: 18%;
   right: 14%;
   animation-delay: 2s;
+}
+
+.pagina-final::before,
+.pagina-final::after {
+  border-radius: 2px;
 }
 
 @keyframes flutuar {
@@ -328,6 +380,7 @@ button:focus-visible {
   align-items: center;
   text-align: center;
   gap: 24px;
+  /* ALTERE A ANIMAÇÃO DE ENTRADA DA PÁGINA FINAL AQUI */
   animation: aparecer 1.2s ease forwards;
   position: relative;
   z-index: 1;
@@ -338,32 +391,40 @@ button:focus-visible {
   to { opacity: 1; transform: translateY(0); }
 }
 
-
+.moldura-final {
+  background: var(--cor-clara);
+  padding: 16px;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-padrao);
+  /* ALTERE O TAMANHO DA MOLDURA FINAL AQUI */
+  max-width: 320px;
+  width: 100%;
+}
 
 .foto-final {
   width: 100%;
-  height: 300px;
+  /* ALTERE A ALTURA DA FOTO FINAL AQUI */
+  height: 320px;
   object-fit: cover;
   display: block;
   background-color: #EAD7DA;
 }
 
-
+/* ALTERE O ESTILO DO TEXTO "AINDA BEM" AQUI */
 .texto-final {
-  font-weight: var(--fonte-titulo);
+  font-family: var(--fonte-titulo);
   font-style: italic;
   font-weight: 600;
- 
+  /* ALTERE O TAMANHO DO TEXTO FINAL AQUI */
   font-size: clamp(2.2rem, 7vw, 3.4rem);
   color: var(--cor-clara);
   letter-spacing: 1px;
 }
 
 .subtexto-final {
-  
   color: var(--cor-destaque);
-  font-size: 1.5rem;
-  max-width: 400px;
+  font-size: 1rem;
+  max-width: 360px;
 }
 
 /* =========================================================
